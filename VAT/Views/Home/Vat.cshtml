@@ -1,0 +1,35 @@
+﻿@model IEnumerable<VAT.Models.VatViewModel>
+@{
+    ViewBag.Title = "VATs";
+}
+
+<h2>Vat</h2>
+<table class="table">
+    <tr style="background-color:lightgreen">
+        <th>
+            Name
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Validity
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @(item.IsValid ? "Yes" : "No")
+            </td>
+        </tr>
+    }
+</table>
+
